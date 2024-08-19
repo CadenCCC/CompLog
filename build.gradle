@@ -29,9 +29,6 @@ dependencies {
     implementation libs.guava
 }
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
-
 tasks.register('sourcesJar', Jar) {
     from sourceSets.main.allSource
     archiveClassifier.set('sources')
