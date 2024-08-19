@@ -1,6 +1,6 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
-    id 'java-library'
+    id 'java'
     id 'maven-publish'
 }
 
@@ -15,14 +15,14 @@ dependencies {
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    api 'org.apache.logging.log4j:log4j-api:2.23.1'
-    api 'org.apache.logging.log4j:log4j-core:2.23.1'
+    implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
 
-    api 'commons-logging:commons-logging:1.2'
+    implementation 'commons-logging:commons-logging:1.2'
 
-    api 'ch.qos.logback:logback-core:1.5.7'
-    api 'ch.qos.logback:logback-classic:1.5.7'
-    api 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'ch.qos.logback:logback-core:1.5.7'
+    implementation 'ch.qos.logback:logback-classic:1.5.7'
+    implementation 'org.slf4j:slf4j-api:2.0.16'
 
     implementation 'org.jetbrains:annotations:24.0.0'
 
