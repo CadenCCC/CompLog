@@ -1,38 +1,54 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id 'maven-publish'
 }
 
 repositories {
     mavenCentral()
 }
 
+version = '0.0.1'
+
 dependencies {
     testImplementation libs.junit.jupiter
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
-    implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
+    api 'org.apache.logging.log4j:log4j-api:2.23.1'
+    api 'org.apache.logging.log4j:log4j-core:2.23.1'
 
-    implementation 'commons-logging:commons-logging:1.2'
+    api 'commons-logging:commons-logging:1.2'
 
-    implementation 'ch.qos.logback:logback-core:1.5.7'
-    implementation 'ch.qos.logback:logback-classic:1.5.7'
-    implementation 'org.slf4j:slf4j-api:2.0.16'
+    api 'ch.qos.logback:logback-core:1.5.7'
+    api 'ch.qos.logback:logback-classic:1.5.7'
+    api 'org.slf4j:slf4j-api:2.0.16'
 
     implementation 'org.jetbrains:annotations:24.0.0'
-
-    //api libs.commons.math3
 
     implementation libs.guava
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.register('sourcesJar', Jar) {
+    from sourceSets.main.allSource
+    archiveClassifier.set('sources')
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            groupId = 'me.caden.complog'
+            artifactId = 'CompLog'
+            version = '0.0.1'
+        }
     }
 }
+
+jar.dependsOn sourcesJar
 
 tasks.named('test') {
     useJUnitPlatform()

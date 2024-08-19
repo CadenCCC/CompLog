@@ -5,4 +5,5 @@ package me.caden.complog.util;
  * @since 1.0.0
  */
 public class ExceptionFormat {
+    // TODO
 }
