@@ -6,6 +6,11 @@ plugins {
 
 repositories {
     mavenCentral()
+
+    maven {
+        name = "JitPack"
+        url = uri("https://jitpack.io")
+    }
 }
 
 version = '0.0.1'
@@ -30,6 +35,7 @@ dependencies {
 }
 
 java {
+    sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
 
