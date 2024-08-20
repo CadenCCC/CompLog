@@ -14,7 +14,7 @@ repositories {
 }
 
 group = 'me.caden.complog'
-version = '0.0.1'
+version = '1.0.1'
 
 dependencies {
     testImplementation libs.junit.jupiter
@@ -57,7 +57,7 @@ publishing {
             artifact sourcesJar
             groupId = 'me.caden.complog'
             artifactId = 'CompLog'
-            version = '0.0.1'
+            version = '1.0.1'
         }
     }
 }
