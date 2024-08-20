@@ -48,6 +48,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+            artifact sourcesJar
             groupId = 'me.caden.complog'
             artifactId = 'CompLog'
             version = '0.0.1'
