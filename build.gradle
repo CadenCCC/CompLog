@@ -13,6 +13,7 @@ repositories {
     }
 }
 
+group = 'me.caden.complog'
 version = '0.0.1'
 
 dependencies {
